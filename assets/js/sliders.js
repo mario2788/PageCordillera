@@ -1,34 +1,35 @@
-// elementos sliders
-sliders = new Array;
-sliders = document.getElementsByClassName("slider-contenedor") ;
-let sliderIndividual = document.querySelectorAll(".contenido-slider")
-let contador = 1;
-// let width = sliderIndividual[0].clientWidth;
-let width = document.getElementsByClassName("contenedor")[0].clientWidth ;
-let intervalo = 3000;
+function Sliders( clssContent, clssElements ){
+    let slider = document.querySelector( clssContent )
+    let sliderIndividual = document.querySelectorAll( clssElements )
+    let contador = 1;
+    // let width = sliderIndividual[0].clientWidth;
+    let width = document.getElementsByClassName("contenedor")[0].clientWidth ;
+    let intervalo = 3000;
 
-window.addEventListener("resize", function(){
-    width = sliderIndividual[0].clientWidth;
-})
+    window.addEventListener("resize", function(){
+        width = sliderIndividual[0].clientWidth;
+    })
 
-setInterval(function(){
-    slides();
-},intervalo);
+    setInterval(function(){
+        slides();
+    },intervalo);
 
-function slides(){
-    for(var k = 0 ;k < sliders.length; k++){
-        sliders[k].style.transform = "translate("+(-width*contador)+"px)";
-        sliders[k].style.transition = "transform .8s";
-    }
-    contador++;
+    function slides(){
+        slider.style.transform = "translate("+(-width*contador)+"px)";
+        // slider.style.transform = "translate("+(-300*contador)+"px)";
+        slider.style.transition = "transform .8s";
+        contador++;
 
-    if(contador == sliderIndividual.length/3){ // 3 conjuntos de imagenes
-        setTimeout(function(){
-            for(var k = 0 ;k < sliders.length; k++){
-                sliders[k].style.transform = "translate(0px)";
-                sliders[k].style.transition = "transform 0s";
-            }
-            contador=1;
-        },1500)
+        if(contador == sliderIndividual.length){
+            setTimeout(function(){
+                slider.style.transform = "translate(0px)";
+                slider.style.transition = "transform 0s";
+                contador=1;
+            },1500)
+        }
     }
 }
+
+Sliders( ".slider1", ".ElementSlider1" ) ;
+Sliders( ".slider2", ".ElementSlider2" ) ;
+Sliders( ".slider3", ".ElementSlider3" ) ;

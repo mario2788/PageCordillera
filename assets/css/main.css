@@ -61,7 +61,11 @@ table {
 body {
 	-webkit-text-size-adjust: none;
 }
-
+.buton_dia{
+	border: solid 2px;
+	border-radius: 5px;
+	padding: 0 4px 0 4px;
+}
 mark {
 	background-color: transparent;
 	color: inherit;
@@ -109,6 +113,23 @@ input, select, textarea {
 
     font-size: 1.3rem;
 	border: 2px solid #51e44c;
+}
+
+.nav_float{
+	position: fixed;
+	z-index:100;
+	background-color: green;
+	display: flex;
+	width:100%;
+	text-align: left;
+}
+.nav_content{
+	display: inline-block; /* Imprescindible */
+	padding-inline: 2em;
+	padding-top: 0.5em;
+	display: flex;
+  /* align-items por defecto tiene el valor `stretch` */
+  	align-items: start;
 }
 
 .hiddenAlways{
@@ -221,6 +242,9 @@ input, select, textarea {
 		-webkit-text-stroke: 2px black;
 		-o-text-stroke: 2px black;
   		color: white;
+	}
+	.textFont{
+			font-size: 1.5em;
 	}
 	.fontTitulo{
 		font-family: 'Squada One', cursive;
@@ -4001,9 +4025,10 @@ input, select, textarea {
 
 	@media screen and (max-width: 736px) {
 
+		.hidden_nav_bar{
+			visibility: hidden;
+		}
 		/* Basic */
-
-
 			html, body {
 				overflow-x: hidden;
 			}

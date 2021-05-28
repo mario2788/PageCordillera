@@ -44,9 +44,11 @@
 
 		// Title Bar.
 			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + 'Cordillera Country Club' + '</span>' +
+				'<div id="titleBar" >' +
+					'<a href="#navPanel" class="toggle"></a>'+
+					'<span class="title">' +
+					'<img src="./images/EscudoNav.png"/>' +
+					'Cordillera Country Club'+
 				'</div>'
 			)
 				.appendTo($body);
@@ -79,7 +81,7 @@
 					'</ul>'+
 				'</div>'
 			)
-		
+
 				.appendTo($body)
 				.panel({
 					delay: 500,
