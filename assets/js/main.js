@@ -46,9 +46,13 @@
 			$(
 				'<div id="titleBar" >' +
 					'<a href="#navPanel" class="toggle"></a>'+
-					'<span class="title">' +
+				'<div style="display:flex; padding-left: calc(50% - 7rem);">' +
 					'<img src="./images/EscudoNav.png"/>' +
-					'Cordillera Country Club'+
+					'</span>' +
+					'<span class="title">' +
+						'Cordillera Country Club'+
+					'</span>' +
+				'</div>'+
 				'</div>'
 			)
 				.appendTo($body);
